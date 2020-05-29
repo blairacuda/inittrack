@@ -1,0 +1,113 @@
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.nameInput{
+  min-width: 100px;
+  max-width: 300px;
+}
+
+.verySmallInput{
+  min-width: 20px;
+  max-width: 30px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.smallInput{
+  min-width: 20px;
+  max-width: 50px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.inputGrid{
+  display: grid;
+  grid-template-columns: 50px 3fr 60px 40px 80px 80px 80px;
+  grid-auto-rows: auto;
+  gap: 5px;
+}
+
+.headerGrid{
+  font-size: 30px;
+}
+
+.headerIcon{
+  margin-right: 20px;
+}
+
+.characterGrid{
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: subgrid;
+  border-bottom: 3px solid gray;
+  padding-bottom: 5px;
+}
+
+.columnGrid{
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: 1 / -1;
+  text-align: center;
+  border-bottom: 3px solid black;
+  padding-bottom: 5px;
+}
+
+.characterIcon{
+  margin-right: 10px;
+}
+
+.redBackground{
+  background-color: #e63946;
+}
+
+.yellowBackground{
+  background-color: #ffc600;
+}
+
+hr{
+  width: 100%;
+}
+
+.blackLine{  
+  color: var(--black);
+  background-color: var(--black);
+  height: 2px;
+}
+
+.grayLine{  
+  color: gray;
+}
+
+.sortGrid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.rowIconGrid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+}
+
+.iconText {
+  font-size: 12px;
+  color: white;
+  margin-left: 9px;
+  margin-top: 3px;
+}
+
+.infinityIcon{
+  margin-top: 8px;
+}
+
+.fa-stack{
+  font-size: 10px;
+}
