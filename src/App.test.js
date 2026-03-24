@@ -2,8 +2,8 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { App } from './component/App';
 
-test('renders learn react link', () => {
+test('renders InitTrack app', () => {
   const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const beastiaryHeading = getByText(/beastiary/i);
+  expect(beastiaryHeading).toBeInTheDocument();
 });
