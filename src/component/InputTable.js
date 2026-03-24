@@ -1,7 +1,7 @@
 import React, {useContext} from 'react'
 import '../style/InputTable.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus, faSave, faTrash, faSort, faSortUp, faSortDown, faClipboard, faHashtag } from '@fortawesome/free-solid-svg-icons'
+import { faTrash, faSort, faSortUp, faSortDown, faClipboard, faHashtag } from '@fortawesome/free-solid-svg-icons'
 import {BeastDispatch} from './App.js'
 
 export function InputTable(props) {
@@ -82,17 +82,6 @@ export function InputTable(props) {
 
     function sortByInit(){
         dispatch({ type: 'sort' })
-    }
-
-    function saveTracker(){
-        // var charactersJson = JSON.stringify(characters)
-        
-        // const a = document.createElement("a");
-        // a.href = URL.createObjectURL(new Blob([JSON.stringify(charactersJson, null, 2)], { type: "text/plain" }));
-        // a.setAttribute("download", "data.txt");
-        // document.body.appendChild(a);
-        // a.click();
-        // document.body.removeChild(a);
     }
 
     function copyCharacter(character, promptForCount = false){
