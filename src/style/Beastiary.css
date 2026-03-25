@@ -30,3 +30,19 @@ h1{
     width: 100%;
     cursor: pointer;
 }
+
+.beastLoading{
+    color: var(--primary);
+    text-align: center;
+    padding: 10px;
+    font-style: italic;
+}
+
+.beastError{
+    color: var(--red);
+    text-align: center;
+    padding: 10px;
+    border: 1px solid var(--red);
+    border-radius: 4px;
+    background-color: rgba(255, 0, 0, 0.1);
+}
