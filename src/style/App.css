@@ -6,6 +6,16 @@
     --white: #e6e8e6;
     --darkGreen: #5f634f;
     --red: #e63946;
+
+    /* dark blue-grey palette derived from --blue */
+    --bg-primary: #12212a;
+    --bg-secondary: #2d3a42;
+    --bg-elevated: #3a4850;
+    --muted: #99a4aa;
+
+    /* aliases for components that reference these */
+    --primary: #7798ab;
+    --success: #5dd39e;
   }
 
   body{
@@ -13,8 +23,8 @@
     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-weight: 900;
     font-size: 16px;
-    color: var(--black);
-    background: var(--blue);
+    color: var(--white);
+    background: var(--bg-primary);
     display: grid;
   }
 

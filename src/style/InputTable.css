@@ -47,7 +47,7 @@ input[type=number] {
   display: grid;
   grid-column: 1 / -1;
   grid-template-columns: subgrid;
-  border-bottom: 3px solid gray;
+  border-bottom: 3px solid var(--muted);
   padding-bottom: 5px;
 }
 
@@ -56,7 +56,7 @@ input[type=number] {
   grid-template-columns: subgrid;
   grid-column: 1 / -1;
   text-align: center;
-  border-bottom: 3px solid black;
+  border-bottom: 3px solid var(--muted);
   padding-bottom: 5px;
 }
 
@@ -76,9 +76,9 @@ hr{
   width: 100%;
 }
 
-.blackLine{  
-  color: var(--black);
-  background-color: var(--black);
+.blackLine{
+  color: var(--muted);
+  background-color: var(--muted);
   height: 2px;
 }
 
