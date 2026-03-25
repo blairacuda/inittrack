@@ -1,4 +1,4 @@
-import React, {useReducer} from 'react';
+import React, {useReducer, useState} from 'react';
 import {InputTable} from './InputTable.js'
 import {Beastiary} from './Beastiary.js'
 import '../style/App.css'
@@ -12,8 +12,27 @@ const InitSortEnum={
   dsc: 2
 }
 
-export function App() {    
+const STORAGE_KEY = 'inittrack-characters';
+
+// Load saved data from localStorage
+function loadFromStorage() {
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) {
+      const data = JSON.parse(saved);
+      return data.characters || [getInitialCharacter()];
+    }
+  } catch (error) {
+    console.error('Error loading from localStorage:', error);
+  }
+  return [getInitialCharacter()];
+}
+
+function getInitialCharacter(){ return {isNpc:true, name: '', initiative: 0, armorClass: 0, hitPoints: 0, maxHitPoints: 0} }
+
+export function App() {
   const [initSort, setInitSort] = React.useState(InitSortEnum.none)
+  const [saveMessage, setSaveMessage] = useState('');
   const [characterList, dispatch] = useReducer((state, action)=>{
     let myChars = []
     switch(action.type){
@@ -74,22 +93,57 @@ export function App() {
             }
             return myChars
         case 'copy':
-          myChars = [...state] 
+          myChars = [...state]
           for (var i = 0; i < action.copyCount; i++) {
               var newCharacter = JSON.parse(JSON.stringify(action.character));
               myChars.push(newCharacter)
           }
-          return myChars    
+          return myChars
+        case 'save':
+          // Save current state to localStorage
+          try {
+            const dataToSave = {
+              characters: state,
+              savedAt: new Date().toISOString()
+            };
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(dataToSave));
+            action.onSuccess && action.onSuccess();
+          } catch (error) {
+            console.error('Error saving to localStorage:', error);
+            action.onError && action.onError(error);
+          }
+          return state;
+        case 'clearAll':
+          // Clear everything including localStorage
+          try {
+            localStorage.removeItem(STORAGE_KEY);
+          } catch (error) {
+            console.error('Error clearing localStorage:', error);
+          }
+          return [getInitialCharacter()];
         default: return state;
     }
-  }, [getInitialCharacter()])
+  }, loadFromStorage())
 
-  function getInitialCharacter(){ return {isNpc:true, name: '', initiative: 0, armorClass: 0, hitPoints: 0, maxHitPoints: 0} }
+  // Handler for save success with visual feedback
+  const handleSave = () => {
+    dispatch({
+      type: 'save',
+      onSuccess: () => {
+        setSaveMessage('Saved!');
+        setTimeout(() => setSaveMessage(''), 2000);
+      },
+      onError: () => {
+        setSaveMessage('Error saving!');
+        setTimeout(() => setSaveMessage(''), 2000);
+      }
+    });
+  };
 
   return (
     <div className="App applicationGrid">
       <BeastDispatch.Provider value={dispatch}>
-        <HeaderCommands className="header"/>
+        <HeaderCommands className="header" onSave={handleSave} saveMessage={saveMessage}/>
         <InputTable className="beastRows" characterList={characterList} initSort={initSort}/>
         <Beastiary beastSelected={(beast)=>console.log(beast.name)}/>
       </BeastDispatch.Provider>
