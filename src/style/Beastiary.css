@@ -1,48 +1,198 @@
-h1{
-    margin-top: 0;
-}
-.beastContainer{
-    display: grid;
-    grid-template-rows: 1fr 1fr 10fr 1fr;
-    height: 450px;
-}
-
-.beastInput{
-    width: 100%;
+/* ── Outer container ── */
+.beastTable {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--bg-beastiary);
+  overflow: hidden;
 }
 
-.beastList{
-    height: 450px;
-    overflow-y: scroll;
-    overflow-x: hidden;
+.beastContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
 }
 
-.beastiaryButtonGrid{
-    display: grid;
-    grid-template-columns: repeat(2 1fr);
+/* ── Beastiary header ── */
+.beastiaryHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg-header);
+  height: 52px;
+  padding: 0 20px;
+  flex-shrink: 0;
 }
 
-.beastRow:hover{
-    background-color: var(--yellow);
-    display: inline-block;
-    border: 1px solid var(--black);
-    border-radius: 4px;
-    width: 100%;
-    cursor: pointer;
+.beastiaryTitle {
+  color: var(--white);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  flex: 1;
 }
 
-.beastLoading{
-    color: var(--primary);
-    text-align: center;
-    padding: 10px;
-    font-style: italic;
+.beastiaryIcon {
+  color: var(--blue);
+  font-size: 18px;
 }
 
-.beastError{
-    color: var(--red);
-    text-align: center;
-    padding: 10px;
-    border: 1px solid var(--red);
-    border-radius: 4px;
-    background-color: rgba(255, 0, 0, 0.1);
+.countBadge {
+  background: var(--bg-count-badge);
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 500;
+  height: 22px;
+  padding: 0 10px;
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+/* ── Search area ── */
+.beastSearchArea {
+  background: var(--bg-app);
+  padding: 12px 16px;
+  flex-shrink: 0;
+}
+
+.beastSearchBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg-search);
+  height: 40px;
+  border-radius: 6px;
+  padding: 0 12px;
+  border: 1px solid #3a4d58;
+}
+
+.beastSearchBox .searchIcon {
+  color: var(--muted);
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.beastInput {
+  background: transparent;
+  border: none;
+  color: var(--white);
+  font-size: 13px;
+  font-weight: 400;
+  width: 100%;
+  padding: 0;
+  outline: none;
+}
+
+.beastInput::placeholder {
+  color: var(--muted);
+}
+
+/* ── Monster list ── */
+.beastList {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: var(--bg-app);
+}
+
+.beastRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  height: 52px;
+  padding: 0 16px;
+  background: var(--bg-row-odd);
+  cursor: pointer;
+  border-top: 1px solid var(--bg-divider);
+}
+
+.beastRow:nth-child(even) {
+  background: var(--bg-row-even);
+}
+
+.beastRow:hover {
+  background: var(--bg-input);
+}
+
+.beastInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow: hidden;
+}
+
+.beastName {
+  color: var(--white);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.beastStats {
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.beastAddBtn {
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  background: var(--green);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #12212a;
+  font-size: 16px;
+  font-weight: 700;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+/* ── Status messages ── */
+.beastLoading {
+  color: var(--muted);
+  text-align: center;
+  padding: 16px;
+  font-style: italic;
+  font-size: 13px;
+  background: var(--bg-app);
+}
+
+.beastError {
+  color: var(--red);
+  text-align: center;
+  padding: 10px 16px;
+  border: 1px solid var(--red);
+  border-radius: 4px;
+  background: rgba(230, 57, 70, 0.1);
+  margin: 8px 16px;
+  font-size: 13px;
+}
+
+/* ── Pagination bar ── */
+.beastiaryButtonGrid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--bg-header);
+  height: 52px;
+  padding: 0 16px;
+  flex-shrink: 0;
+}
+
+.pageInfo {
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 500;
+  flex: 1;
+  text-align: center;
 }

@@ -10,15 +10,33 @@ export function HeaderCommands(props) {
 
     return (
     <div className='header'>
-        <div className='headerIcons'>
-            <FontAwesomeIcon className='icon headerIcon' icon={ faPlus } onClick={()=>dispatch({ type: 'initial' })} title="Add empty character" />
-            <FontAwesomeIcon className='icon headerIcon' icon={ faTrash } onClick={()=>dispatch({ type: 'reset' })} title="Remove all NPCs" />
-            <FontAwesomeIcon className='icon headerIcon' icon={ faSave } onClick={onSave} title="Save to browser storage" />
-            <FontAwesomeIcon className='icon headerIcon' icon={ faBan } onClick={()=>{
+        <div className='logoBox'>⚔</div>
+        <div className='appTitleGroup'>
+            <span className='appTitle'>InitTrack</span>
+            <span className='appSubtitle'>D&amp;D 5e Initiative Tracker</span>
+        </div>
+        <div className='headerSpacer' />
+        <div className='headerActions'>
+            <button className='btn-primary' onClick={() => dispatch({ type: 'initial' })} title="Add empty character">
+                <FontAwesomeIcon icon={faPlus} />
+                Add Character
+            </button>
+            <button className='btn-secondary' onClick={() => dispatch({ type: 'reset' })} title="Remove all NPCs">
+                <FontAwesomeIcon icon={faTrash} style={{color: 'var(--red)'}} />
+                Remove NPCs
+            </button>
+            <button className='btn-secondary' onClick={onSave} title="Save to browser storage">
+                <FontAwesomeIcon icon={faSave} style={{color: 'var(--blue)'}} />
+                Save
+            </button>
+            <button className='btn-secondary' onClick={() => {
                 if (window.confirm('Clear all characters and saved data?')) {
                     dispatch({ type: 'clearAll' });
                 }
-            }} title="Clear all & storage" />
+            }} title="Clear all & storage">
+                <FontAwesomeIcon icon={faBan} style={{color: 'var(--red)'}} />
+                Clear All
+            </button>
         </div>
         {saveMessage && <div className='saveMessage'>{saveMessage}</div>}
     </div>

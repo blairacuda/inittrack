@@ -1,100 +1,231 @@
-/* Chrome, Safari, Edge, Opera */
+/* ── Chrome/Safari/Edge/Opera number input spinners ── */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
-
-/* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
 }
 
-.nameInput{
-  min-width: 100px;
-  max-width: 300px;
+/* ── Table Toolbar ── */
+.tableToolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--bg-header);
+  height: 52px;
+  padding: 0 20px;
+  flex-shrink: 0;
 }
 
-.verySmallInput{
-  min-width: 20px;
-  max-width: 30px;
-  text-align: center;
-  margin: 0 auto;
+.sectionTitle {
+  color: var(--white);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  flex: 1;
 }
 
-.smallInput{
-  min-width: 20px;
-  max-width: 50px;
-  text-align: center;
-  margin: 0 auto;
-}
-
-.inputGrid{
-  display: grid;
-  grid-template-columns: 50px 3fr 60px 40px 80px 80px 80px;
-  grid-auto-rows: auto;
-  gap: 5px;
-}
-
-.headerGrid{
-  font-size: 30px;
-}
-
-.headerIcon{
-  margin-right: 20px;
-}
-
-.characterGrid{
-  display: grid;
-  grid-column: 1 / -1;
-  grid-template-columns: subgrid;
-  border-bottom: 3px solid var(--muted);
-  padding-bottom: 5px;
-}
-
-.columnGrid{
-  display: grid;
-  grid-template-columns: subgrid;
-  grid-column: 1 / -1;
-  text-align: center;
-  border-bottom: 3px solid var(--muted);
-  padding-bottom: 5px;
-}
-
-.characterIcon{
-  margin-right: 10px;
-}
-
-.redBackground{
-  background-color: #e63946;
-}
-
-.yellowBackground{
-  background-color: #ffc600;
-}
-
-hr{
-  width: 100%;
-}
-
-.blackLine{
+.sortBtn {
+  height: 30px;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 0 10px;
+  gap: 6px;
+  background: var(--bg-input);
   color: var(--muted);
-  background-color: var(--muted);
-  height: 2px;
+  border-radius: 4px;
 }
 
-.grayLine{  
-  color: gray;
+.sortBtnIcon {
+  color: var(--blue);
 }
 
-.sortGrid{
+/* ── Column grid & table grid ── */
+.inputGrid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 48px 1fr 64px 56px 80px 80px 100px;
+  flex: 1;
 }
 
-.rowIconGrid{
+.columnGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 5px;
+  grid-column: 1 / -1;
+  grid-template-columns: subgrid;
+  background: var(--bg-col-header);
+  height: 36px;
+  align-items: center;
+  padding: 0 20px;
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.columnGrid > *:nth-child(2) {
+  text-align: left;
+}
+
+/* ── Character rows ── */
+.characterGrid {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: subgrid;
+  align-items: center;
+  padding: 0 20px;
+  height: 52px;
+  background: var(--bg-row-odd);
+  border-left: 4px solid var(--green);
+}
+
+.characterGrid:nth-child(even) {
+  background: var(--bg-row-even);
+}
+
+.characterGrid + .characterGrid {
+  border-top: 1px solid var(--bg-divider);
+}
+
+/* HP state backgrounds & indicators */
+.yellowBackground {
+  background: var(--bg-row-bloodied) !important;
+  border-left-color: var(--yellow-hl) !important;
+}
+
+.redBackground {
+  background: var(--bg-row-critical) !important;
+  border-left-color: var(--red) !important;
+}
+
+/* ── Inputs inside rows ── */
+.nameInput {
+  min-width: 80px;
+  width: 100%;
+  font-weight: 600;
+  font-size: 14px;
+  background: transparent;
+  padding: 0 4px;
+}
+
+.verySmallInput {
+  width: 40px;
+  text-align: center;
+  height: 30px;
+}
+
+.smallInput {
+  width: 56px;
+  text-align: center;
+  height: 30px;
+}
+
+/* HP input critical highlight */
+.redBackground .hpInput {
+  background: #400a0a;
+  border: 1px solid var(--red);
+}
+
+/* ── NPC badge ── */
+.npcBadge {
+  display: inline-flex;
+  align-items: center;
+  height: 18px;
+  padding: 0 6px;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-left: 6px;
+  background: #0a1e0a;
+  color: var(--green);
+}
+
+.yellowBackground .npcBadge {
+  background: #332200;
+  color: var(--yellow-hl);
+}
+
+.redBackground .npcBadge {
+  background: #330a0a;
+  color: var(--red);
+}
+
+/* ── Name cell layout ── */
+.nameCell {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  overflow: hidden;
+}
+
+/* ── Action icons ── */
+.rowIconGrid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.rowAction {
+  cursor: pointer;
+  color: var(--blue);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.rowAction.danger {
+  color: var(--red);
+}
+
+/* ── Health legend ── */
+.healthLegend {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--bg-header);
+  height: 40px;
+  padding: 0 20px;
+  flex-shrink: 0;
+  margin-top: auto;
+}
+
+.legendLabel {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 500;
+  margin-right: 4px;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.legendDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+/* ── Misc ── */
+.sortGrid {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.fa-stack {
+  font-size: 10px;
 }
 
 .iconText {
@@ -104,10 +235,20 @@ hr{
   margin-top: 3px;
 }
 
-.infinityIcon{
+.infinityIcon {
   margin-top: 8px;
 }
 
-.fa-stack{
-  font-size: 10px;
+hr {
+  width: 100%;
+}
+
+.blackLine {
+  color: var(--muted);
+  background-color: var(--muted);
+  height: 2px;
+}
+
+.grayLine {
+  color: var(--muted);
 }

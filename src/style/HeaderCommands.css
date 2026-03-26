@@ -1,32 +1,68 @@
 .header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--bg-header);
+  height: 60px;
+  padding: 0 24px;
+  flex-shrink: 0;
 }
 
-.headerIcons {
-    display: flex;
-    gap: 10px;
+.logoBox {
+  width: 36px;
+  height: 36px;
+  background: var(--green);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.appTitleGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.appTitle {
+  color: var(--white);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
+.appSubtitle {
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.headerSpacer {
+  flex: 1;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .saveMessage {
-    color: var(--success);
-    font-weight: bold;
-    font-size: 14px;
-    padding: 5px 10px;
-    border-radius: 4px;
-    background-color: rgba(0, 200, 0, 0.1);
-    border: 1px solid var(--success);
-    animation: fadeIn 0.3s ease-in;
+  color: var(--success);
+  font-weight: 600;
+  font-size: 13px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  background-color: rgba(93, 211, 158, 0.1);
+  border: 1px solid var(--success);
+  animation: fadeIn 0.3s ease-in;
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-5px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
