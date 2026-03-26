@@ -45,6 +45,7 @@ input[type=number] {
 .inputGrid {
   display: grid;
   grid-template-columns: 48px 1fr 64px 56px 80px 80px 100px;
+  column-gap: 8px;
   align-content: start;
 }
 
