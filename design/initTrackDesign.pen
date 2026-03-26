@@ -1,5 +1,5 @@
 {
-  "version": "2.8",
+  "version": "2.9",
   "children": [
     {
       "type": "frame",
@@ -9,7 +9,7 @@
       "name": "InitTrack — Main Screen",
       "width": 1440,
       "height": 900,
-      "fill": "#1a1a2e",
+      "fill": "#1a272e",
       "layout": "vertical",
       "children": [
         {
@@ -18,7 +18,7 @@
           "name": "Header",
           "width": "fill_container",
           "height": 60,
-          "fill": "#12122a",
+          "fill": "#12212a",
           "gap": 16,
           "padding": [
             0,
@@ -117,7 +117,7 @@
                       "height": 16,
                       "iconFontName": "plus",
                       "iconFontFamily": "lucide",
-                      "fill": "#12122a"
+                      "fill": "#12212a"
                     },
                     {
                       "type": "text",
@@ -136,7 +136,7 @@
                   "id": "6xm0r",
                   "name": "Btn Remove NPCs",
                   "height": 36,
-                  "fill": "#2d2d42",
+                  "fill": "#2d3a42",
                   "cornerRadius": 4,
                   "gap": 6,
                   "padding": [
@@ -172,7 +172,7 @@
                   "id": "kBM81",
                   "name": "Btn Save",
                   "height": 36,
-                  "fill": "#2d2d42",
+                  "fill": "#2d3a42",
                   "cornerRadius": 4,
                   "gap": 6,
                   "padding": [
@@ -208,7 +208,7 @@
                   "id": "4GI14",
                   "name": "Btn Clear All",
                   "height": 36,
-                  "fill": "#2d2d42",
+                  "fill": "#2d3a42",
                   "cornerRadius": 4,
                   "gap": 6,
                   "padding": [
@@ -249,7 +249,7 @@
           "name": "Content Area",
           "width": "fill_container",
           "height": "fill_container",
-          "fill": "#0f0f1e",
+          "fill": "#0f191e",
           "gap": 1,
           "children": [
             {
@@ -258,7 +258,7 @@
               "name": "Left Panel — Initiative Table",
               "width": "fill_container",
               "height": "fill_container",
-              "fill": "#1a1a2e",
+              "fill": "#1a272e",
               "layout": "vertical",
               "children": [
                 {
@@ -267,7 +267,7 @@
                   "name": "Table Toolbar",
                   "width": "fill_container",
                   "height": 52,
-                  "fill": "#12122a",
+                  "fill": "#12212a",
                   "gap": 12,
                   "padding": [
                     0,
@@ -291,7 +291,7 @@
                       "id": "VJyJE",
                       "name": "Sort Btn",
                       "height": 30,
-                      "fill": "#2d2d42",
+                      "fill": "#2d3a42",
                       "cornerRadius": 4,
                       "gap": 6,
                       "padding": [
@@ -314,7 +314,7 @@
                           "type": "text",
                           "id": "zcIgJ",
                           "name": "sortLabel",
-                          "fill": "#9999aa",
+                          "fill": "#99a4aa",
                           "content": "Sort by Initiative",
                           "fontFamily": "Inter",
                           "fontSize": 12,
@@ -330,7 +330,7 @@
                   "name": "Column Headers",
                   "width": "fill_container",
                   "height": 36,
-                  "fill": "#232340",
+                  "fill": "#233540",
                   "padding": [
                     0,
                     20
@@ -501,7 +501,7 @@
                       "name": "Row — Thorin (Healthy)",
                       "width": "fill_container",
                       "height": 52,
-                      "fill": "#1f1f38",
+                      "fill": "#1f2f38",
                       "padding": [
                         0,
                         20
@@ -531,11 +531,11 @@
                               "name": "Checkbox",
                               "width": 16,
                               "height": 16,
-                              "fill": "#2d2d42",
+                              "fill": "#2d3a42",
                               "cornerRadius": 3,
                               "stroke": {
                                 "thickness": 1,
-                                "fill": "#3a3a50"
+                                "fill": "#3a4850"
                               }
                             }
                           ]
@@ -574,7 +574,7 @@
                               "name": "Init Input",
                               "width": 40,
                               "height": 30,
-                              "fill": "#2d2d42",
+                              "fill": "#2d3a42",
                               "cornerRadius": 4,
                               "justifyContent": "center",
                               "alignItems": "center",
@@ -607,7 +607,7 @@
                               "name": "AC Input",
                               "width": 40,
                               "height": 30,
-                              "fill": "#2d2d42",
+                              "fill": "#2d3a42",
                               "cornerRadius": 4,
                               "justifyContent": "center",
                               "alignItems": "center",
@@ -640,7 +640,7 @@
                               "name": "MaxHP Input",
                               "width": 56,
                               "height": 30,
-                              "fill": "#2d2d42",
+                              "fill": "#2d3a42",
                               "cornerRadius": 4,
                               "justifyContent": "center",
                               "alignItems": "center",
@@ -673,7 +673,7 @@
                               "name": "HP Input",
                               "width": 56,
                               "height": 30,
-                              "fill": "#2d2d42",
+                              "fill": "#2d3a42",
                               "cornerRadius": 4,
                               "justifyContent": "center",
                               "alignItems": "center",
@@ -742,7 +742,7 @@
                       "name": "Divider",
                       "width": "fill_container",
                       "height": 1,
-                      "fill": "#252540"
+                      "fill": "#253640"
                     },
                     {
                       "type": "frame",
@@ -750,7 +750,7 @@
                       "name": "Row — Legolas (Healthy)",
                       "width": "fill_container",
                       "height": 52,
-                      "fill": "#1a1a30",
+                      "fill": "#1a2830",
                       "padding": [
                         0,
                         20
@@ -780,11 +780,11 @@
                               "name": "r2npcBox",
                               "width": 16,
                               "height": 16,
-                              "fill": "#2d2d42",
+                              "fill": "#2d3a42",
                               "cornerRadius": 3,
                               "stroke": {
                                 "thickness": 1,
-                                "fill": "#3a3a50"
+                                "fill": "#3a4850"
                               }
                             }
                           ]
@@ -823,7 +823,7 @@
                               "name": "r2initBox",
                               "width": 40,
                               "height": 30,
-                              "fill": "#2d2d42",
+                              "fill": "#2d3a42",
                               "cornerRadius": 4,
                               "justifyContent": "center",
                               "alignItems": "center",
@@ -856,7 +856,7 @@
                               "name": "r2acBox",
                               "width": 40,
                               "height": 30,
-                              "fill": "#2d2d42",
+                              "fill": "#2d3a42",
                               "cornerRadius": 4,
                               "justifyContent": "center",
                               "alignItems": "center",
@@ -889,7 +889,7 @@
                               "name": "r2maxHpBox",
                               "width": 56,
                               "height": 30,
-                              "fill": "#2d2d42",
+                              "fill": "#2d3a42",
                               "cornerRadius": 4,
                               "justifyContent": "center",
                               "alignItems": "center",
@@ -922,7 +922,7 @@
                               "name": "r2hpBox",
                               "width": 56,
                               "height": 30,
-                              "fill": "#2d2d42",
+                              "fill": "#2d3a42",
                               "cornerRadius": 4,
                               "justifyContent": "center",
                               "alignItems": "center",
@@ -991,7 +991,7 @@
                       "name": "Divider",
                       "width": "fill_container",
                       "height": 1,
-                      "fill": "#252540"
+                      "fill": "#253640"
                     },
                     {
                       "type": "frame",
@@ -1094,7 +1094,7 @@
                               "name": "r3initBox",
                               "width": 40,
                               "height": 30,
-                              "fill": "#2d2d42",
+                              "fill": "#2d3a42",
                               "cornerRadius": 4,
                               "justifyContent": "center",
                               "alignItems": "center",
@@ -1127,7 +1127,7 @@
                               "name": "r3acBox",
                               "width": 40,
                               "height": 30,
-                              "fill": "#2d2d42",
+                              "fill": "#2d3a42",
                               "cornerRadius": 4,
                               "justifyContent": "center",
                               "alignItems": "center",
@@ -1160,7 +1160,7 @@
                               "name": "r3maxHpBox",
                               "width": 56,
                               "height": 30,
-                              "fill": "#2d2d42",
+                              "fill": "#2d3a42",
                               "cornerRadius": 4,
                               "justifyContent": "center",
                               "alignItems": "center",
@@ -1193,7 +1193,7 @@
                               "name": "r3hpBox",
                               "width": 56,
                               "height": 30,
-                              "fill": "#2d2d42",
+                              "fill": "#2d3a42",
                               "cornerRadius": 4,
                               "justifyContent": "center",
                               "alignItems": "center",
@@ -1262,7 +1262,7 @@
                       "name": "Divider",
                       "width": "fill_container",
                       "height": 1,
-                      "fill": "#252540"
+                      "fill": "#253640"
                     },
                     {
                       "type": "frame",
@@ -1366,7 +1366,7 @@
                               "name": "r4initBox",
                               "width": 40,
                               "height": 30,
-                              "fill": "#2d2d42",
+                              "fill": "#2d3a42",
                               "cornerRadius": 4,
                               "justifyContent": "center",
                               "alignItems": "center",
@@ -1399,7 +1399,7 @@
                               "name": "r4acBox",
                               "width": 40,
                               "height": 30,
-                              "fill": "#2d2d42",
+                              "fill": "#2d3a42",
                               "cornerRadius": 4,
                               "justifyContent": "center",
                               "alignItems": "center",
@@ -1432,7 +1432,7 @@
                               "name": "r4maxHpBox",
                               "width": 56,
                               "height": 30,
-                              "fill": "#2d2d42",
+                              "fill": "#2d3a42",
                               "cornerRadius": 4,
                               "justifyContent": "center",
                               "alignItems": "center",
@@ -1538,7 +1538,7 @@
                       "name": "Divider",
                       "width": "fill_container",
                       "height": 1,
-                      "fill": "#252540"
+                      "fill": "#253640"
                     },
                     {
                       "type": "frame",
@@ -1546,7 +1546,7 @@
                       "name": "Row — Zombie Horde (Healthy NPC)",
                       "width": "fill_container",
                       "height": 52,
-                      "fill": "#1f1f38",
+                      "fill": "#1f2f38",
                       "padding": [
                         0,
                         20
@@ -1642,7 +1642,7 @@
                               "name": "r5initBox",
                               "width": 40,
                               "height": 30,
-                              "fill": "#2d2d42",
+                              "fill": "#2d3a42",
                               "cornerRadius": 4,
                               "justifyContent": "center",
                               "alignItems": "center",
@@ -1675,7 +1675,7 @@
                               "name": "r5acBox",
                               "width": 40,
                               "height": 30,
-                              "fill": "#2d2d42",
+                              "fill": "#2d3a42",
                               "cornerRadius": 4,
                               "justifyContent": "center",
                               "alignItems": "center",
@@ -1708,7 +1708,7 @@
                               "name": "r5maxHpBox",
                               "width": 56,
                               "height": 30,
-                              "fill": "#2d2d42",
+                              "fill": "#2d3a42",
                               "cornerRadius": 4,
                               "justifyContent": "center",
                               "alignItems": "center",
@@ -1741,7 +1741,7 @@
                               "name": "r5hpBox",
                               "width": 56,
                               "height": 30,
-                              "fill": "#2d2d42",
+                              "fill": "#2d3a42",
                               "cornerRadius": 4,
                               "justifyContent": "center",
                               "alignItems": "center",
@@ -1812,7 +1812,7 @@
                   "name": "Health Legend",
                   "width": "fill_container",
                   "height": 40,
-                  "fill": "#12122a",
+                  "fill": "#12212a",
                   "gap": 16,
                   "padding": [
                     0,
@@ -1824,7 +1824,7 @@
                       "type": "text",
                       "id": "pCjj2",
                       "name": "legendLabel",
-                      "fill": "#9999aa",
+                      "fill": "#99a4aa",
                       "content": "HP Status:",
                       "fontFamily": "Inter",
                       "fontSize": 11,
@@ -1851,10 +1851,11 @@
                           "type": "text",
                           "id": "yJHEJ",
                           "name": "legendGreenText",
-                          "fill": "#9999aa",
+                          "fill": "#99a4aa",
                           "content": "Healthy (>50%)",
                           "fontFamily": "Inter",
-                          "fontSize": 11
+                          "fontSize": 11,
+                          "fontWeight": "normal"
                         }
                       ]
                     },
@@ -1879,10 +1880,11 @@
                           "type": "text",
                           "id": "hoJg9",
                           "name": "legendYellowText",
-                          "fill": "#9999aa",
+                          "fill": "#99a4aa",
                           "content": "Bloodied (≤50%)",
                           "fontFamily": "Inter",
-                          "fontSize": 11
+                          "fontSize": 11,
+                          "fontWeight": "normal"
                         }
                       ]
                     },
@@ -1907,10 +1909,11 @@
                           "type": "text",
                           "id": "7d0LI",
                           "name": "legendRedText",
-                          "fill": "#9999aa",
+                          "fill": "#99a4aa",
                           "content": "Critical (≤25%)",
                           "fontFamily": "Inter",
-                          "fontSize": 11
+                          "fontSize": 11,
+                          "fontWeight": "normal"
                         }
                       ]
                     }
@@ -1924,7 +1927,7 @@
               "name": "Right Panel — Beastiary",
               "width": 420,
               "height": "fill_container",
-              "fill": "#141428",
+              "fill": "#142128",
               "layout": "vertical",
               "children": [
                 {
@@ -1933,7 +1936,7 @@
                   "name": "Beastiary Header",
                   "width": "fill_container",
                   "height": 52,
-                  "fill": "#12122a",
+                  "fill": "#12212a",
                   "gap": 10,
                   "padding": [
                     0,
@@ -1967,7 +1970,7 @@
                       "id": "MHnzQ",
                       "name": "Count Badge",
                       "height": 22,
-                      "fill": "#1e1e3a",
+                      "fill": "#1e303a",
                       "cornerRadius": 11,
                       "padding": [
                         0,
@@ -1994,7 +1997,7 @@
                   "id": "BpKXY",
                   "name": "Search Area",
                   "width": "fill_container",
-                  "fill": "#1a1a2e",
+                  "fill": "#1a272e",
                   "layout": "vertical",
                   "padding": [
                     12,
@@ -2007,11 +2010,11 @@
                       "name": "Search Input",
                       "width": "fill_container",
                       "height": 40,
-                      "fill": "#232340",
+                      "fill": "#233540",
                       "cornerRadius": 6,
                       "stroke": {
                         "thickness": 1,
-                        "fill": "#3a3a58"
+                        "fill": "#3a4d58"
                       },
                       "gap": 10,
                       "padding": [
@@ -2028,16 +2031,17 @@
                           "height": 16,
                           "iconFontName": "search",
                           "iconFontFamily": "lucide",
-                          "fill": "#9999aa"
+                          "fill": "#99a4aa"
                         },
                         {
                           "type": "text",
                           "id": "6JrBP",
                           "name": "searchInput",
-                          "fill": "#9999aa",
+                          "fill": "#99a4aa",
                           "content": "Search monsters...",
                           "fontFamily": "Inter",
-                          "fontSize": 13
+                          "fontSize": 13,
+                          "fontWeight": "normal"
                         }
                       ]
                     }
@@ -2049,7 +2053,7 @@
                   "name": "Monster List",
                   "width": "fill_container",
                   "height": "fill_container",
-                  "fill": "#1a1a2e",
+                  "fill": "#1a272e",
                   "layout": "vertical",
                   "children": [
                     {
@@ -2058,7 +2062,7 @@
                       "name": "Monster — Goblin",
                       "width": "fill_container",
                       "height": 52,
-                      "fill": "#1f1f38",
+                      "fill": "#1f2f38",
                       "padding": [
                         0,
                         16
@@ -2092,7 +2096,8 @@
                               "fill": "#7798AB",
                               "content": "AC 15  ·  HP 7  ·  CR 1/4",
                               "fontFamily": "Inter",
-                              "fontSize": 11
+                              "fontSize": 11,
+                              "fontWeight": "normal"
                             }
                           ]
                         },
@@ -2115,7 +2120,7 @@
                               "height": 16,
                               "iconFontName": "plus",
                               "iconFontFamily": "lucide",
-                              "fill": "#12122a"
+                              "fill": "#12212a"
                             }
                           ]
                         }
@@ -2127,7 +2132,7 @@
                       "name": "Divider",
                       "width": "fill_container",
                       "height": 1,
-                      "fill": "#252540"
+                      "fill": "#253640"
                     },
                     {
                       "type": "frame",
@@ -2135,7 +2140,7 @@
                       "name": "Monster — Orc",
                       "width": "fill_container",
                       "height": 52,
-                      "fill": "#1a1a30",
+                      "fill": "#1a2830",
                       "padding": [
                         0,
                         16
@@ -2169,7 +2174,8 @@
                               "fill": "#7798AB",
                               "content": "AC 13  ·  HP 15  ·  CR 1/2",
                               "fontFamily": "Inter",
-                              "fontSize": 11
+                              "fontSize": 11,
+                              "fontWeight": "normal"
                             }
                           ]
                         },
@@ -2192,7 +2198,7 @@
                               "height": 16,
                               "iconFontName": "plus",
                               "iconFontFamily": "lucide",
-                              "fill": "#12122a"
+                              "fill": "#12212a"
                             }
                           ]
                         }
@@ -2204,7 +2210,7 @@
                       "name": "Divider",
                       "width": "fill_container",
                       "height": 1,
-                      "fill": "#252540"
+                      "fill": "#253640"
                     },
                     {
                       "type": "frame",
@@ -2212,7 +2218,7 @@
                       "name": "Monster — Troll",
                       "width": "fill_container",
                       "height": 52,
-                      "fill": "#1f1f38",
+                      "fill": "#1f2f38",
                       "padding": [
                         0,
                         16
@@ -2246,7 +2252,8 @@
                               "fill": "#7798AB",
                               "content": "AC 15  ·  HP 84  ·  CR 5",
                               "fontFamily": "Inter",
-                              "fontSize": 11
+                              "fontSize": 11,
+                              "fontWeight": "normal"
                             }
                           ]
                         },
@@ -2269,7 +2276,7 @@
                               "height": 16,
                               "iconFontName": "plus",
                               "iconFontFamily": "lucide",
-                              "fill": "#12122a"
+                              "fill": "#12212a"
                             }
                           ]
                         }
@@ -2281,7 +2288,7 @@
                       "name": "Divider",
                       "width": "fill_container",
                       "height": 1,
-                      "fill": "#252540"
+                      "fill": "#253640"
                     },
                     {
                       "type": "frame",
@@ -2289,7 +2296,7 @@
                       "name": "Monster — Vampire",
                       "width": "fill_container",
                       "height": 52,
-                      "fill": "#1a1a30",
+                      "fill": "#1a2830",
                       "padding": [
                         0,
                         16
@@ -2323,7 +2330,8 @@
                               "fill": "#7798AB",
                               "content": "AC 16  ·  HP 144  ·  CR 13",
                               "fontFamily": "Inter",
-                              "fontSize": 11
+                              "fontSize": 11,
+                              "fontWeight": "normal"
                             }
                           ]
                         },
@@ -2346,7 +2354,7 @@
                               "height": 16,
                               "iconFontName": "plus",
                               "iconFontFamily": "lucide",
-                              "fill": "#12122a"
+                              "fill": "#12212a"
                             }
                           ]
                         }
@@ -2358,7 +2366,7 @@
                       "name": "Divider",
                       "width": "fill_container",
                       "height": 1,
-                      "fill": "#252540"
+                      "fill": "#253640"
                     },
                     {
                       "type": "frame",
@@ -2366,7 +2374,7 @@
                       "name": "Monster — Ancient Red Dragon",
                       "width": "fill_container",
                       "height": 52,
-                      "fill": "#1f1f38",
+                      "fill": "#1f2f38",
                       "padding": [
                         0,
                         16
@@ -2400,7 +2408,8 @@
                               "fill": "#7798AB",
                               "content": "AC 22  ·  HP 546  ·  CR 24",
                               "fontFamily": "Inter",
-                              "fontSize": 11
+                              "fontSize": 11,
+                              "fontWeight": "normal"
                             }
                           ]
                         },
@@ -2423,7 +2432,7 @@
                               "height": 16,
                               "iconFontName": "plus",
                               "iconFontFamily": "lucide",
-                              "fill": "#12122a"
+                              "fill": "#12212a"
                             }
                           ]
                         }
@@ -2437,7 +2446,7 @@
                   "name": "Pagination",
                   "width": "fill_container",
                   "height": 52,
-                  "fill": "#12122a",
+                  "fill": "#12212a",
                   "gap": 8,
                   "padding": [
                     0,
@@ -2451,7 +2460,7 @@
                       "id": "X50ae",
                       "name": "Prev Btn",
                       "height": 32,
-                      "fill": "#2d2d42",
+                      "fill": "#2d3a42",
                       "cornerRadius": 4,
                       "gap": 6,
                       "padding": [
@@ -2468,13 +2477,13 @@
                           "height": 14,
                           "iconFontName": "chevron-left",
                           "iconFontFamily": "lucide",
-                          "fill": "#9999aa"
+                          "fill": "#99a4aa"
                         },
                         {
                           "type": "text",
                           "id": "Ijvbd",
                           "name": "prevLabel",
-                          "fill": "#9999aa",
+                          "fill": "#99a4aa",
                           "content": "Previous",
                           "fontFamily": "Inter",
                           "fontSize": 12,
@@ -2524,7 +2533,7 @@
                           "height": 14,
                           "iconFontName": "chevron-right",
                           "iconFontFamily": "lucide",
-                          "fill": "#12122a"
+                          "fill": "#12212a"
                         }
                       ]
                     }
