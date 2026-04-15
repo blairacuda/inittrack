@@ -21,8 +21,40 @@
   gap: 10px;
   background: var(--bg-header);
   height: 52px;
-  padding: 0 20px;
+  padding: 0 12px 0 20px;
   flex-shrink: 0;
+}
+
+.beastTable--collapsed .beastiaryHeader {
+  padding: 0;
+  justify-content: center;
+}
+
+.beastiaryCollapseBtn {
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  font-size: 13px;
+  height: 32px;
+  width: 32px;
+  min-width: 32px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.beastiaryCollapseBtn:hover {
+  background: var(--bg-input);
+  color: var(--white);
+}
+
+.beastTable--collapsed .beastiaryCollapseBtn {
+  margin-left: 0;
 }
 
 .beastiaryTitle {

@@ -28,6 +28,7 @@ A web-based D&D 5e initiative tracker with integrated monster database. Track pl
 - **One-Click Add**: Click any monster to instantly add it to your initiative tracker with pre-filled stats
 - **Loading States**: Visual feedback while monsters are loading
 - **Error Handling**: Clear error messages if the API request fails
+- **Collapsible Panel**: Collapse the bestiary to a slim 52px strip to maximize table space, expand with one click
 
 ### Data Persistence
 - **Manual Save**: Save your current session to browser localStorage with the save button
@@ -43,7 +44,7 @@ A web-based D&D 5e initiative tracker with integrated monster database. Track pl
   - **Default background**: >50% HP remaining (healthy)
 
 ### User Interface
-- **Retro Styling**: NES.css provides a nostalgic 8-bit aesthetic
+- **Custom Dark Theme**: Blue-grey palette designed for low-light gaming sessions
 - **Icon-Based Actions**: FontAwesome icons for intuitive controls
 - **Tooltips**: Hover over icons to see helpful descriptions
 - **Responsive Grid Layout**: Clean, organized table layout
@@ -54,7 +55,7 @@ A web-based D&D 5e initiative tracker with integrated monster database. Track pl
 - **React 18.3.1**: Modern React with hooks (useState, useReducer, useContext, useEffect, useRef)
 - **Create React App**: Zero-config build tooling
 - **FontAwesome 6**: Icon library for UI elements
-- **NES.css 2.3.0**: Retro gaming-inspired CSS framework
+- **Custom CSS**: Blue-grey dark theme with CSS custom properties
 - **Open5e API**: D&D 5e monster database
 - **localStorage API**: Browser-based data persistence
 - **GitHub Actions**: Automated CI/CD pipeline
@@ -206,6 +207,7 @@ inittrack/
 - Debounced search (500ms delay)
 - Paginated results
 - Loading and error states
+- Collapsible panel (52px collapsed width, animated CSS grid transition)
 
 ### State Management
 
@@ -257,6 +259,5 @@ This project is open source and available under the MIT License.
 ## Acknowledgments
 
 - [Open5e](https://open5e.com/) for the excellent D&D 5e API
-- [NES.css](https://nostalgic-css.github.io/NES.css/) for the retro styling
 - [Create React App](https://create-react-app.dev/) for the build tooling
 - [FontAwesome](https://fontawesome.com/) for the icon library

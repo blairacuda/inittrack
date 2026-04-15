@@ -3,9 +3,9 @@ import '../style/Beastiary.css'
 import {get} from '../utilities/Fetcher.js'
 import {BeastDispatch} from './App.js'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch, faBook, faPlus, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
+import { faSearch, faBook, faPlus, faChevronLeft, faChevronRight, faAnglesRight, faAnglesLeft } from '@fortawesome/free-solid-svg-icons'
 
-export function Beastiary(props) {
+export function Beastiary({ isCollapsed, onToggleCollapse, beastSelected }) {
   const dispatch = useContext(BeastDispatch);
 
   const [beasts, setBeasts] = useState([]);
@@ -28,65 +28,72 @@ export function Beastiary(props) {
   }, [currentPage, searchTerm]);
 
   return (
-    <div className='beastTable'>
+    <div className={`beastTable${isCollapsed ? ' beastTable--collapsed' : ''}`}>
       <div className="beastContainer">
 
         {/* Header */}
         <div className="beastiaryHeader">
-          <FontAwesomeIcon className="beastiaryIcon" icon={faBook} />
-          <span className="beastiaryTitle">Beastiary</span>
-          {totalCount !== null && (
+          {!isCollapsed && <FontAwesomeIcon className="beastiaryIcon" icon={faBook} />}
+          {!isCollapsed && <span className="beastiaryTitle">Beastiary</span>}
+          {!isCollapsed && totalCount !== null && (
             <span className="countBadge">
               {totalCount >= 1000 ? `${Math.floor(totalCount/100)*100}+` : totalCount} monsters
             </span>
           )}
+          <button className="beastiaryCollapseBtn" onClick={onToggleCollapse} title={isCollapsed ? 'Expand Beastiary' : 'Collapse Beastiary'}>
+            <FontAwesomeIcon icon={isCollapsed ? faAnglesRight : faAnglesLeft} />
+          </button>
         </div>
 
-        {/* Search */}
-        <div className="beastSearchArea">
-          <div className="beastSearchBox">
-            <FontAwesomeIcon className="searchIcon" icon={faSearch} />
-            <input
-              type='text'
-              className='beastInput'
-              onChange={(e) => handleSearchInput(e.target.value)}
-              placeholder="Search monsters..."
-            />
-          </div>
-        </div>
-
-        {loading && <div className='beastLoading'>Loading...</div>}
-        {error && <div className='beastError'>{error}</div>}
-
-        {/* Monster list */}
-        <div className='beastList'>
-          {beasts.map((beast, idx) =>
-            <div className="beastRow" key={beast.slug || idx} onClick={() => dispatch({ type: 'add', beast })}>
-              <div className="beastInfo">
-                <span className="beastName">{beast.name}</span>
-                <span className="beastStats">
-                  AC {beast.armor_class} · HP {beast.hit_points} · CR {beast.challenge_rating}
-                </span>
+        {!isCollapsed && (
+          <>
+            {/* Search */}
+            <div className="beastSearchArea">
+              <div className="beastSearchBox">
+                <FontAwesomeIcon className="searchIcon" icon={faSearch} />
+                <input
+                  type='text'
+                  className='beastInput'
+                  onChange={(e) => handleSearchInput(e.target.value)}
+                  placeholder="Search monsters..."
+                />
               </div>
-              <button className="beastAddBtn" onClick={(e) => { e.stopPropagation(); dispatch({ type: 'add', beast }); }}>
-                <FontAwesomeIcon icon={faPlus} />
+            </div>
+
+            {loading && <div className='beastLoading'>Loading...</div>}
+            {error && <div className='beastError'>{error}</div>}
+
+            {/* Monster list */}
+            <div className='beastList'>
+              {beasts.map((beast, idx) =>
+                <div className="beastRow" key={beast.slug || idx} onClick={() => dispatch({ type: 'add', beast })}>
+                  <div className="beastInfo">
+                    <span className="beastName">{beast.name}</span>
+                    <span className="beastStats">
+                      AC {beast.armor_class} · HP {beast.hit_points} · CR {beast.challenge_rating}
+                    </span>
+                  </div>
+                  <button className="beastAddBtn" onClick={(e) => { e.stopPropagation(); dispatch({ type: 'add', beast }); }}>
+                    <FontAwesomeIcon icon={faPlus} />
+                  </button>
+                </div>
+              )}
+            </div>
+
+            {/* Pagination */}
+            <div className='beastiaryButtonGrid'>
+              <button className="btn-secondary btn-sm" onClick={onPreviousClicked} disabled={currentPage === 1 || loading}>
+                <FontAwesomeIcon icon={faChevronLeft} />
+                Previous
+              </button>
+              <span className="pageInfo">Page {currentPage} of {maxPage}</span>
+              <button className="btn-accent btn-sm" onClick={onNextClicked} disabled={currentPage >= maxPage || loading}>
+                Next
+                <FontAwesomeIcon icon={faChevronRight} />
               </button>
             </div>
-          )}
-        </div>
-
-        {/* Pagination */}
-        <div className='beastiaryButtonGrid'>
-          <button className="btn-secondary btn-sm" onClick={onPreviousClicked} disabled={currentPage === 1 || loading}>
-            <FontAwesomeIcon icon={faChevronLeft} />
-            Previous
-          </button>
-          <span className="pageInfo">Page {currentPage} of {maxPage}</span>
-          <button className="btn-accent btn-sm" onClick={onNextClicked} disabled={currentPage >= maxPage || loading}>
-            Next
-            <FontAwesomeIcon icon={faChevronRight} />
-          </button>
-        </div>
+          </>
+        )}
 
       </div>
     </div>

@@ -59,6 +59,11 @@ body {
   height: 100vh;
   background: var(--bg-deeper);
   gap: 1px;
+  transition: grid-template-columns 0.2s ease;
+}
+
+.applicationGrid.beastiary-collapsed {
+  grid-template-columns: 1fr 52px;
 }
 
 .header {

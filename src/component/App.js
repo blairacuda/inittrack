@@ -33,6 +33,7 @@ function getInitialCharacter(){ return {isNpc:true, name: '', initiative: 0, arm
 export function App() {
   const [initSort, setInitSort] = React.useState(InitSortEnum.none)
   const [saveMessage, setSaveMessage] = useState('');
+  const [beastiaryCollapsed, setBeastiaryCollapsed] = useState(false);
   const [characterList, dispatch] = useReducer((state, action)=>{
     let myChars = []
     switch(action.type){
@@ -141,11 +142,15 @@ export function App() {
   };
 
   return (
-    <div className="App applicationGrid">
+    <div className={`App applicationGrid${beastiaryCollapsed ? ' beastiary-collapsed' : ''}`}>
       <BeastDispatch.Provider value={dispatch}>
         <HeaderCommands className="header" onSave={handleSave} saveMessage={saveMessage}/>
         <InputTable className="beastRows" characterList={characterList} initSort={initSort}/>
-        <Beastiary beastSelected={(beast)=>console.log(beast.name)}/>
+        <Beastiary
+          beastSelected={(beast)=>console.log(beast.name)}
+          isCollapsed={beastiaryCollapsed}
+          onToggleCollapse={() => setBeastiaryCollapsed(c => !c)}
+        />
       </BeastDispatch.Provider>
     </div>
   );
