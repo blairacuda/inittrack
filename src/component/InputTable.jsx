@@ -2,7 +2,7 @@ import React, {useContext} from 'react'
 import '../style/InputTable.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash, faSortAmountDown, faClipboard, faLayerGroup } from '@fortawesome/free-solid-svg-icons'
-import {BeastDispatch} from './App.js'
+import {BeastDispatch} from './App.jsx'
 
 export function InputTable(props) {
     const dispatch = useContext(BeastDispatch);

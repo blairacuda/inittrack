@@ -53,7 +53,8 @@ A web-based D&D 5e initiative tracker with integrated monster database. Track pl
 ## Tech Stack
 
 - **React 18.3.1**: Modern React with hooks (useState, useReducer, useContext, useEffect, useRef)
-- **Create React App**: Zero-config build tooling
+- **Vite 6**: Fast build tooling with HMR
+- **Vitest**: Unit test runner
 - **FontAwesome 6**: Icon library for UI elements
 - **Custom CSS**: Blue-grey dark theme with CSS custom properties
 - **Open5e API**: D&D 5e monster database
@@ -85,18 +86,21 @@ npm install
 npm start
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
+4. Open [http://localhost:5173](http://localhost:5173) in your browser
 
 ### Available Scripts
 
 #### `npm start`
-Runs the app in development mode at [http://localhost:3000](http://localhost:3000). The page reloads when you make edits.
+Runs the app in development mode at [http://localhost:5173](http://localhost:5173). The page reloads when you make edits.
 
 #### `npm test`
-Launches the test runner in interactive watch mode.
+Runs the test suite once with Vitest.
 
 #### `npm run build`
-Builds the app for production to the `build` folder. The build is minified and optimized for performance.
+Builds the app for production to the `dist/` folder. The build is minified and optimized for performance.
+
+#### `npm run preview`
+Serves the production build locally for verification before deploying.
 
 ## Usage Guide
 
@@ -158,13 +162,13 @@ Builds the app for production to the `build` folder. The build is minified and o
 
 ```
 inittrack/
-├── public/              # Static assets
+├── public/              # Static assets (favicon, manifest, etc.)
 ├── src/
 │   ├── component/       # React components
-│   │   ├── App.js              # Main app component with state management
-│   │   ├── HeaderCommands.js   # Save, reset, and add buttons
-│   │   ├── InputTable.js       # Character grid and row management
-│   │   └── Beastiary.js        # Monster search and API integration
+│   │   ├── App.jsx             # Main app component with state management
+│   │   ├── HeaderCommands.jsx  # Save, reset, and add buttons
+│   │   ├── InputTable.jsx      # Character grid and row management
+│   │   └── Beastiary.jsx       # Monster search and API integration
 │   ├── style/           # CSS files
 │   │   ├── App.css
 │   │   ├── HeaderCommands.css
@@ -173,8 +177,10 @@ inittrack/
 │   ├── utilities/       # Helper functions
 │   │   ├── ComponentUtils.js   # Custom hooks
 │   │   └── Fetcher.js          # API fetch wrapper
-│   ├── index.js         # React app entry point
-│   └── App.test.js      # Test file
+│   ├── index.jsx        # React app entry point
+│   └── App.test.jsx     # Test file
+├── index.html           # Vite HTML entry point
+├── vite.config.js       # Vite and Vitest configuration
 ├── .github/
 │   └── workflows/
 │       └── deploy.yml   # GitHub Actions CI/CD pipeline
@@ -185,24 +191,24 @@ inittrack/
 
 ### Key Components
 
-**App.js**
+**App.jsx**
 - Main application state using `useReducer`
 - Character list management
 - localStorage integration
 - Action dispatcher context
 
-**HeaderCommands.js**
+**HeaderCommands.jsx**
 - Header controls (add, save, reset, clear all)
 - Save confirmation messaging
 
-**InputTable.js**
+**InputTable.jsx**
 - Character grid display
 - Inline editing
 - Initiative sorting
 - Character duplication
 - Health-based color coding
 
-**Beastiary.js**
+**Beastiary.jsx**
 - Open5e API integration
 - Debounced search (500ms delay)
 - Paginated results
@@ -245,7 +251,7 @@ Every push to the `main` branch automatically:
 
 ```bash
 npm run build
-# Deploy the build/ folder to your hosting provider
+# Deploy the dist/ folder to your hosting provider
 ```
 
 ## Contributing
@@ -259,5 +265,5 @@ This project is open source and available under the MIT License.
 ## Acknowledgments
 
 - [Open5e](https://open5e.com/) for the excellent D&D 5e API
-- [Create React App](https://create-react-app.dev/) for the build tooling
+- [Vite](https://vitejs.dev/) for the build tooling
 - [FontAwesome](https://fontawesome.com/) for the icon library

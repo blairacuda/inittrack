@@ -1,7 +1,7 @@
 import React, {useState, useContext, useEffect, useRef} from 'react'
 import '../style/Beastiary.css'
 import {get} from '../utilities/Fetcher.js'
-import {BeastDispatch} from './App.js'
+import {BeastDispatch} from './App.jsx'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faBook, faPlus, faChevronLeft, faChevronRight, faAnglesRight, faAnglesLeft } from '@fortawesome/free-solid-svg-icons'
 

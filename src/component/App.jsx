@@ -1,8 +1,8 @@
 import React, {useReducer, useState} from 'react';
-import {InputTable} from './InputTable.js'
-import {Beastiary} from './Beastiary.js'
+import {InputTable} from './InputTable.jsx'
+import {Beastiary} from './Beastiary.jsx'
 import '../style/App.css'
-import { HeaderCommands } from './HeaderCommands.js';
+import { HeaderCommands } from './HeaderCommands.jsx';
 
 export const BeastDispatch = React.createContext(null);
 

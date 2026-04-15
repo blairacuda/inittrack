@@ -1,7 +1,7 @@
 import React, {useContext} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faSave, faTrash, faBan} from '@fortawesome/free-solid-svg-icons'
-import {BeastDispatch} from './App.js'
+import {BeastDispatch} from './App.jsx'
 import '../style/HeaderCommands.css'
 
 export function HeaderCommands(props) {
