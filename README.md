@@ -28,7 +28,7 @@ A web-based D&D 5e initiative tracker with integrated monster database. Track pl
 - **One-Click Add**: Click any monster to instantly add it to your initiative tracker with pre-filled stats
 - **Loading States**: Visual feedback while monsters are loading
 - **Error Handling**: Clear error messages if the API request fails
-- **Collapsible Panel**: Collapse the bestiary to a slim 52px strip to maximize table space, expand with one click
+- **Collapsible Panel**: Collapse the bestiary to a slim 52px strip to maximize table space, expand with one click. The toggle button shows a dragon with wings spread (expanded) or folded (collapsed)
 
 ### Data Persistence
 - **Manual Save**: Save your current session to browser localStorage with the save button

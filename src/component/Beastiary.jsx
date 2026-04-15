@@ -3,7 +3,49 @@ import '../style/Beastiary.css'
 import {get} from '../utilities/Fetcher.js'
 import {BeastDispatch} from './App.jsx'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch, faBook, faPlus, faChevronLeft, faChevronRight, faAnglesRight, faAnglesLeft } from '@fortawesome/free-solid-svg-icons'
+import { faSearch, faBook, faPlus, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
+
+function DragonOpenIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+         width="1.3em" height="1.3em" fill="currentColor" aria-hidden="true">
+      {/* Horns */}
+      <path d="M10 0 L8.5 3.5 L11 2.5 Z"/>
+      <path d="M14 0 L15.5 3.5 L13 2.5 Z"/>
+      {/* Head */}
+      <ellipse cx="12" cy="5" rx="2.5" ry="2"/>
+      {/* Body */}
+      <path d="M10 7 L14 7 L14.5 16 L12 17 L9.5 16 Z"/>
+      {/* Left wing — spread wide */}
+      <path d="M10 8.5 C 7.5 7.5 4 6.5 1 8 C 2.5 10.5 5.5 12.5 9 12 L 10 10 Z"/>
+      {/* Right wing — spread wide */}
+      <path d="M14 8.5 C 16.5 7.5 20 6.5 23 8 C 21.5 10.5 18.5 12.5 15 12 L 14 10 Z"/>
+      {/* Tail */}
+      <path d="M12 17 C 10.5 19 10 21.5 11.5 23.5 L 12 21 L 12.5 23.5 C 14 21.5 13.5 19 12 17 Z"/>
+    </svg>
+  );
+}
+
+function DragonClosedIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+         width="1.3em" height="1.3em" fill="currentColor" aria-hidden="true">
+      {/* Horns */}
+      <path d="M10 0 L8.5 3.5 L11 2.5 Z"/>
+      <path d="M14 0 L15.5 3.5 L13 2.5 Z"/>
+      {/* Head */}
+      <ellipse cx="12" cy="5" rx="2.5" ry="2"/>
+      {/* Body */}
+      <path d="M10 7 L14 7 L14.5 16 L12 17 L9.5 16 Z"/>
+      {/* Left wing — folded tight */}
+      <path d="M10 8.5 C 8 8.5 7 10 7 12 C 7 14 8 15 9.5 15 L 10 12.5 Z"/>
+      {/* Right wing — folded tight */}
+      <path d="M14 8.5 C 16 8.5 17 10 17 12 C 17 14 16 15 14.5 15 L 14 12.5 Z"/>
+      {/* Tail */}
+      <path d="M12 17 C 10.5 19 10 21.5 11.5 23.5 L 12 21 L 12.5 23.5 C 14 21.5 13.5 19 12 17 Z"/>
+    </svg>
+  );
+}
 
 export function Beastiary({ isCollapsed, onToggleCollapse, beastSelected }) {
   const dispatch = useContext(BeastDispatch);
@@ -41,7 +83,7 @@ export function Beastiary({ isCollapsed, onToggleCollapse, beastSelected }) {
             </span>
           )}
           <button className="beastiaryCollapseBtn" onClick={onToggleCollapse} title={isCollapsed ? 'Expand Beastiary' : 'Collapse Beastiary'}>
-            <FontAwesomeIcon icon={isCollapsed ? faAnglesRight : faAnglesLeft} />
+            {isCollapsed ? <DragonClosedIcon /> : <DragonOpenIcon />}
           </button>
         </div>
 

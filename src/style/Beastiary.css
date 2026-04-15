@@ -33,7 +33,7 @@
 .beastiaryCollapseBtn {
   background: transparent;
   border: none;
-  color: var(--muted);
+  color: var(--blue);
   font-size: 13px;
   height: 32px;
   width: 32px;
@@ -46,11 +46,13 @@
   cursor: pointer;
   margin-left: auto;
   flex-shrink: 0;
+  transition: color 0.15s ease, background 0.15s ease;
 }
 
 .beastiaryCollapseBtn:hover {
   background: var(--bg-input);
   color: var(--white);
+  transform: scale(1.1);
 }
 
 .beastTable--collapsed .beastiaryCollapseBtn {
