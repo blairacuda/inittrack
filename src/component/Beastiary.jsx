@@ -61,7 +61,7 @@ export function Beastiary({ isCollapsed, onToggleCollapse, beastSelected }) {
   const searchDebounceTimer = useRef(null);
 
   const URL_BASE = "https://api.open5e.com/"
-  const URL_MONSTERS = `${URL_BASE}monsters`
+  const URL_MONSTERS = `${URL_BASE}v2/creatures`
   const PAGE_SIZE = 50;
 
   useEffect(() => {
@@ -108,7 +108,7 @@ export function Beastiary({ isCollapsed, onToggleCollapse, beastSelected }) {
             {/* Monster list */}
             <div className='beastList'>
               {beasts.map((beast, idx) =>
-                <div className="beastRow" key={beast.slug || idx} onClick={() => dispatch({ type: 'add', beast })}>
+                <div className="beastRow" key={beast.key || idx} onClick={() => dispatch({ type: 'add', beast })}>
                   <div className="beastInfo">
                     <span className="beastName">{beast.name}</span>
                     <span className="beastStats">
@@ -146,7 +146,7 @@ export function Beastiary({ isCollapsed, onToggleCollapse, beastSelected }) {
     setError(null);
 
     const url = searchTerm
-      ? `${URL_MONSTERS}/?search=${searchTerm}&page=${currentPage}`
+      ? `${URL_MONSTERS}/?name__icontains=${searchTerm}&page=${currentPage}`
       : `${URL_MONSTERS}/?page=${currentPage}`;
 
     get(url).then(

@@ -230,11 +230,11 @@ The app uses React's `useReducer` for centralized state management with the foll
 
 ### API Integration
 
-**Open5e API**
-- Base URL: `https://api.open5e.com/monsters`
-- Search: `?search={term}&page={pageNum}`
+**Open5e API (v2)**
+- Base URL: `https://api.open5e.com/v2/creatures`
+- Search: `?name__icontains={term}&page={pageNum}`
 - Pagination: 50 results per page
-- Response includes: name, armor_class, hit_points, slug
+- Response includes: name, armor_class, hit_points, challenge_rating, key
 
 ## Deployment
 
