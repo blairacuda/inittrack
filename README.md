@@ -22,13 +22,14 @@ A web-based D&D 5e initiative tracker with integrated monster database. Track pl
 - **Visual Sort Indicator**: Icon changes to show current sort state
 
 ### Bestiary Integration
-- **Monster Search**: Search through 2000+ monsters from the [Open5e API](https://open5e.com/)
+- **Monster Search**: Search 3500+ creatures from the [Open5e API](https://open5e.com/) (v2)
 - **Debounced Search**: Smart search that waits 500ms after you stop typing to reduce API calls
 - **Pagination**: Browse through monster results with Previous/Next buttons
 - **One-Click Add**: Click any monster to instantly add it to your initiative tracker with pre-filled stats
 - **Loading States**: Visual feedback while monsters are loading
 - **Error Handling**: Clear error messages if the API request fails
 - **Collapsible Panel**: Collapse the bestiary to a slim 52px strip to maximize table space, expand with one click. The toggle button shows a dragon with wings spread (expanded) or folded (collapsed)
+- **Source Selector**: Choose which source materials appear in the beastiary. Sources are grouped by publisher (Wizards of the Coast SRD, Kobold Press, EN Publishing, etc.), each showing its document key and game system (5e 2014 / 5e 2024 / Level Up A5e). Toggle individual sources or whole publisher groups; the selection is saved to localStorage and defaults to all sources
 
 ### Data Persistence
 - **Manual Save**: Save your current session to browser localStorage with the save button
@@ -36,6 +37,7 @@ A web-based D&D 5e initiative tracker with integrated monster database. Track pl
 - **Save Confirmation**: Visual "Saved!" message confirms successful save
 - **Selective Reset**: Remove all NPCs while keeping player characters
 - **Clear All**: Completely clear all characters and saved data (with confirmation prompt)
+- **Source Selection Persistence**: Your chosen beastiary sources are saved separately in localStorage and restored on return
 
 ### Visual Health Tracking
 - **Color-Coded HP**: Character rows change color based on remaining health:
@@ -168,12 +170,14 @@ inittrack/
 │   │   ├── App.jsx             # Main app component with state management
 │   │   ├── HeaderCommands.jsx  # Save, reset, and add buttons
 │   │   ├── InputTable.jsx      # Character grid and row management
-│   │   └── Beastiary.jsx       # Monster search and API integration
+│   │   ├── Beastiary.jsx        # Monster search, source filtering, API integration
+│   │   └── SourcesSelector.jsx  # Source-material picker modal (grouped by publisher)
 │   ├── style/           # CSS files
 │   │   ├── App.css
 │   │   ├── HeaderCommands.css
 │   │   ├── InputTable.css
-│   │   └── Beastiary.css
+│   │   ├── Beastiary.css
+│   │   └── SourcesSelector.css
 │   ├── utilities/       # Helper functions
 │   │   ├── ComponentUtils.js   # Custom hooks
 │   │   └── Fetcher.js          # API fetch wrapper
@@ -209,11 +213,18 @@ inittrack/
 - Health-based color coding
 
 **Beastiary.jsx**
-- Open5e API integration
+- Open5e API (v2) integration
 - Debounced search (500ms delay)
+- Source-material filtering via `document__key__in` (selection read synchronously from localStorage so a saved filter applies on the first fetch with no flash; the documents endpoint powers only the picker)
 - Paginated results
 - Loading and error states
 - Collapsible panel (52px collapsed width, animated CSS grid transition)
+
+**SourcesSelector.jsx**
+- Modal picker listing all Open5e source documents, grouped by publisher
+- Per-source and per-group toggles, Select all / Clear all
+- Shows each document's key badge and game system (5e 2014 / 5e 2024 / Level Up A5e)
+- Persists the chosen source keys to localStorage (`inittrack-sources`)
 
 ### State Management
 
@@ -231,10 +242,16 @@ The app uses React's `useReducer` for centralized state management with the foll
 ### API Integration
 
 **Open5e API (v2)**
-- Base URL: `https://api.open5e.com/v2/creatures`
-- Search: `?name__icontains={term}&page={pageNum}`
-- Pagination: 50 results per page
+
+Creatures (`https://api.open5e.com/v2/creatures`):
+- Search: `?name__icontains={term}`
+- Source filter: `?document__key__in={key1},{key2}` (omitted when all sources are selected)
+- Pagination: `?page={pageNum}`, 50 results per page
 - Response includes: name, armor_class, hit_points, challenge_rating, key
+
+Documents (`https://api.open5e.com/v2/documents`):
+- Fetched once to populate the source selector
+- Response includes: key, name, gamesystem, publisher
 
 ## Deployment
 

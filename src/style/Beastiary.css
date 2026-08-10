@@ -59,6 +59,29 @@
   margin-left: 0;
 }
 
+.beastiarySourcesBtn {
+  background: transparent;
+  border: none;
+  color: var(--blue);
+  font-size: 14px;
+  height: 32px;
+  width: 32px;
+  min-width: 32px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+.beastiarySourcesBtn:hover {
+  background: var(--bg-input);
+  color: var(--white);
+}
+
 .beastiaryTitle {
   color: var(--white);
   font-size: 15px;
